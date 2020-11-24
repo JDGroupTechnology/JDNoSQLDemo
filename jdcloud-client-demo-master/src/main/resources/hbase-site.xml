@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+  <!-- 此参数决定了每次从服务器scan获取的数据量，默认会是1，性能很低，因此设置为100以上，每行数据太大的，可以小一些，否则可以更高 -->
+  <property>
+    <name>hbase.client.scanner.caching</name>
+    <value>200</value>
+  </property>
+
+  <!-- 异步提交，此参数定义客户端写缓存的大小,这里配置了5M -->
+  <property>
+    <name>hbase.client.write.buffer</name>
+    <value>5242880</value>
+  </property>
+
+  <!-- 其他参数根据应用情况配置，请和HBase组讨论具体业务场景-->
+  <!-- 以下参数请按照实际申请的实例信息填写-->
+
+  <!--3.1.4 使用policyServer配置中心 用户名和密码方式连接 默认使用配置配置中心连接hbase-->
+  <!--1. 第一步配置连接串 用户名和密码-->
+  <!--鉴权需要的用户名-->
+  <property>
+    <name>hbase.client.username</name>
+    <value>dingbs_124</value>
+  </property>
+  <!--鉴权需要的密码-->
+  <property>
+    <name>hbase.client.password</name>
+    <value>Dingbs_5188</value>
+  </property>
+  <!--鉴权加密-->
+  <property>
+    <name>hbase.client.ugi.encryption.enable</name>
+    <value>true</value>
+  </property>
+  <!--第二步配置Policyserver配置中心地址，域名或是服务端列表，二选一。-->
+  <!--配置中心域名，需要根据配置中心真实域名配置-->
+  <!--<property>
+      <name>hbase.policyserver.domain</name>
+      <value>ps.hbase.jd.com</value>
+  </property>-->
+  <!-- 使用ip列表连接Policyserver配置中心-->
+  <property>
+    <name>hbase.policy.http.is.use.domain</name>
+    <value>false</value>
+  </property>
+  <!--Policyserver配置中心服务地址列表-->
+  <property>
+    <name>hbase.policy.http.server.address</name>
+    <value>192.168.84.6:16100,192.168.84.7:16100,192.168.84.8:16100</value>
+  </property>
+
+  <!--3.1.4 使用zk 用户名和密码方式连接hbase-->
+  <!--1. 第一步配置连接串 用户名和密码-->
+  <!--选择zk 方式连接hbase-->
+  <!--<property>
+    <name>hbase.client.connection.impl</name>
+    <value>org.apache.hadoop.hbase.client.DefaultClusterConnection</value>
+  </property>
+
+  &lt;!&ndash; 鉴权需要的用户名&ndash;&gt;
+  <property>
+    <name>hbase.client.username</name>
+    <value>dingbs_124</value>
+  </property>
+  &lt;!&ndash;鉴权需要的密码&ndash;&gt;
+  <property>
+    <name>hbase.client.password</name>
+    <value>Dingbs_5188</value>
+  </property>
+  &lt;!&ndash;鉴权加密&ndash;&gt;
+  <property>
+    <name>hbase.client.ugi.encryption.enable</name>
+    <value>true</value>
+  </property>
+  &lt;!&ndash;2. 第二步配置zk 连接地址&ndash;&gt;
+  &lt;!&ndash;zk 服务列表&ndash;&gt;
+  <property>
+    <name>hbase.zookeeper.quorum</name>
+    <value>192.168.84.6:2181,192.168.84.7:2181,192.168.84.8:2181</value>
+  </property>
+  &lt;!&ndash;zk node 信息&ndash;&gt;
+  <property>
+    <name>zookeeper.znode.parent</name>
+    <value>/hbase_nanbohui02-jcloud-xwlolng</value>
+  </property>-->
+
+</configuration>
